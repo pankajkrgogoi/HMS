@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("healthWebAPi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22164aa699080bc3e571be8588e449adf9988b75")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ccf24c63c4069124ed886f363b47ff3c8cdb0cce")]
 [assembly: System.Reflection.AssemblyProductAttribute("healthWebAPi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("healthWebAPi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

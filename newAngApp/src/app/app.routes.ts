@@ -4,11 +4,21 @@ import { RoleGuard } from './services/role-guard';
 import { User } from './user/user';
 import { Login } from './login/login';
 import { Error } from './error/error';
+import { Doctor } from './doctor/doctor';
+import { Patient } from './patient/patient';
+import { Appointment } from './appointment/appointment';
+import { Dashboard } from './dashboard/dashboard';
 
 export const routes: Routes = [
-    { path: 'admin', component: Admin, canActivate: [RoleGuard], data: { role: 'admin' } },
-    { path: 'user', component: User, canActivate: [RoleGuard], data: { role: 'user' } },
-    { path: 'login', component: Login },
-      { path: 'error', component: Error },
-    { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: 'admin', component: Admin, canActivate: [RoleGuard], data: { role: 'admin' } },
+  { path: 'user', component: User, canActivate: [RoleGuard], data: { role: 'user' } },
+   { path: 'home', component: Dashboard },
+  { path: 'login', component: Login },
+  { path: 'doctor', component: Doctor },
+  { path: 'patient', component: Patient },
+  { path: 'appointment', component: Appointment },
+  { path: 'notification', component: Notification },
+
+  { path: 'error', component: Error },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];

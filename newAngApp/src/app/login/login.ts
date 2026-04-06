@@ -23,8 +23,8 @@ export class Login {
        this.authService.login(this.username,this.password).subscribe({
         next: (res: any) => {
          debugger
-         const token = localStorage.getItem('token');
-         const headers = new HttpHeaders().set('Authorization', 'Bearer ${token}');
+        //  const token = localStorage.getItem('token');
+        //  const headers = new HttpHeaders().set('Authorization', 'Bearer ${token}');
           // Navigate based on role
           if (res.role === 'admin') {
             this.router.navigate(['/admin']);
