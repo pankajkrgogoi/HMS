@@ -5,7 +5,7 @@ import { User } from './user/user';
 import { Login } from './login/login';
 import { Error } from './error/error';
 import { Doctor } from './doctor/doctor';
-import { Patient } from './patient/patient';
+import { PatientComponent } from './patient/patient';
 import { Appointment } from './appointment/appointment';
 import { Dashboard } from './dashboard/dashboard';
 
@@ -15,7 +15,7 @@ export const routes: Routes = [
    { path: 'home', component: Dashboard },
   { path: 'login', component: Login },
   { path: 'doctor', component: Doctor },
-  { path: 'patient', component: Patient },
+  { path: 'patient', component: PatientComponent },
   { path: 'appointment', component: Appointment },
   { path: 'notification', component: Notification },
 

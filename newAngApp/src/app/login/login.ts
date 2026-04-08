@@ -1,4 +1,4 @@
-import { Component,NgModule } from '@angular/core';
+import { Component,NgModule, OnInit } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule, FormGroup,FormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth-service';
 import { Router } from '@angular/router';
@@ -10,12 +10,15 @@ import { HttpHeaders } from '@angular/common/http';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login {
+export class Login implements OnInit{
   username:string="";
   password:string="";
 
   constructor( public authService: AuthService, private router: Router) {
   
+  }
+  ngOnInit(): void {
+    localStorage.clear();
   }
 
    onSubmit(){
