@@ -13,7 +13,8 @@
         (input)="searchPatients()" 
         placeholder="Search patients by name, MRN, or phone..." 
         class="search-input">
-      <button class="btn btn-secondary" (click)="loadPatients()">Clear</button>
+      <!-- <button class="btn btn-secondary" (click)="loadPatients()">Clear</button> -->
+       <button class="btn btn-secondary" (click)="searchTerm = ''; loadPatients()">Clear</button>
     </div>
   </div>
 
@@ -97,7 +98,7 @@
 
   <!-- Patients List -->
   <div class="patients-list" *ngIf="!showForm">
-    <!-- <div class="loading" *ngIf="loading">Loading patients...</div> -->
+    <div class="loading" *ngIf="loading">Loading patients...</div>
     
     <div class="patients-table" *ngIf="!loading">
       <div class="table-header">
@@ -118,7 +119,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let patient of patients" [class.inactive]="patient.isActive === false">
+            <tr *ngFor="let patient of filteredPatients" [class.inactive]="patient.isActive === false">
               <td>{{ patient.mrn }}</td>
               <td>{{ patient.fullName }}</td>
               <td>{{ patient.dob | date:'mediumDate' }}</td>

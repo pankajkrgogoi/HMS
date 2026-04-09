@@ -23,7 +23,6 @@ export class PatientComponent implements OnInit {
 
   constructor(
     private patientService: PatientService,
-    private router:Router,
     private fb: FormBuilder
   ) {
     this.patientForm = this.fb.group({
@@ -38,24 +37,18 @@ export class PatientComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     if (localStorage.getItem('token') == null) {
-      this.router.navigate(['/login']);
-    }
-
     this.loadPatients();
   }
 
-  loadPatients() {
+  loadPatients(): void {
     this.loading = true;
     this.patientService.getPatients().subscribe({
-      next: (patients: Patient[]) => {
-        console.log('Success Block')
+      next: (patients) => {
         this.patients = patients;
-       this.filteredPatients = patients;
+        this.filteredPatients = patients;
         this.loading = false;
       },
-      error: (error: any) => {
-        console.log('Error Block')
+      error: (error) => {
         console.error('Error loading patients:', error);
         this.loading = false;
       }
@@ -64,16 +57,15 @@ export class PatientComponent implements OnInit {
 
   searchPatients(): void {
     if (this.searchTerm.trim()) {
-      
       const searchLower = this.searchTerm.toLowerCase().trim();
-      this.patients = this.patients.filter(patient =>
+      this.filteredPatients = this.patients.filter(patient =>
         patient.fullName.toLowerCase().includes(searchLower) ||
         patient.mrn.toLowerCase().includes(searchLower) ||
         patient.phone.includes(searchLower) ||
         (patient.email && patient.email.toLowerCase().includes(searchLower))
       );
     } else {
-      this.patients = this.patients;
+      this.filteredPatients = this.patients;
     }
   }
 
@@ -109,7 +101,7 @@ export class PatientComponent implements OnInit {
             this.loadPatients();
             this.cancelForm();
           },
-          error: (error: any) => console.error('Error updating patient:', error)
+          error: (error) => console.error('Error updating patient:', error)
         });
       } else {
         this.patientService.createPatient(patientData).subscribe({
@@ -117,7 +109,7 @@ export class PatientComponent implements OnInit {
             this.loadPatients();
             this.cancelForm();
           },
-          error: (error: any) => console.error('Error creating patient:', error)
+          error: (error) => console.error('Error creating patient:', error)
         });
       }
     }
@@ -129,7 +121,7 @@ export class PatientComponent implements OnInit {
         next: () => {
           this.loadPatients();
         },
-        error: (error: any) => console.error('Error deleting patient:', error)
+        error: (error) => console.error('Error deleting patient:', error)
       });
     }
   }

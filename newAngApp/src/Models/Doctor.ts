@@ -1,12 +1,11 @@
 export interface Doctor {
-  doctorId?: number;
-  specialization: string;
+ doctorId?: number;
   fullName: string;
-  dob: string;
-  gender: string;
+  specialization: string;
   phone: string;
   email?: string;
-  address?: string;
+  licenseNumber?: string;
+  department?: string;
   isActive?: boolean;
   createdAt?: string;
 }
