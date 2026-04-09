@@ -8,7 +8,7 @@ import { Doctor } from '../Models/Doctor';
 import { PatientComponent } from './patient/patient';
 import { Appointment } from './appointment/appointment';
 import { Dashboard } from './dashboard/dashboard';
-import { DoctorComponent } from './doctor-component/doctor-component';
+
 
 
 export const routes: Routes = [
