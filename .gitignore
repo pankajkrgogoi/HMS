@@ -13,6 +13,11 @@ obj/
 # Logs
 *.log
 
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
 # OS generated files
 Thumbs.db
 ehthumbs.db
@@ -58,3 +63,13 @@ _ReSharper*/
 # Others
 *.dbmdl
 *.jfm
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
