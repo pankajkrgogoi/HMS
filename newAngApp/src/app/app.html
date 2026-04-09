@@ -16,11 +16,11 @@
           <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/patient" >Patient</a>
+          <!-- <a class="nav-link" routerLinkActive="active" routerLink="/patient" >Patient</a> -->
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/patient']">Patient</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/doctor" >Doctor</a>
-        </li>
+        <!-- <li class="nav-item"> -->
+          <!-- <!-- <a class="nav-link" routerLinkActive="active" routerLink="/doctor" >Doctor</a> --> 
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/appointment">Appointment</a>
         </li>

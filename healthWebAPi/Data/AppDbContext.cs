@@ -8,5 +8,6 @@ namespace healthWebApi.Data
 
         public DbSet<User> Users => Set<User>();
         public DbSet<Patient> Patients => Set<Patient>();
+
     }
 }

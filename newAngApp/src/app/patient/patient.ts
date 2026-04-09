@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PatientService } from '../services/patient-service';
 import { Patient } from '../../Models/Patient';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-patient',
@@ -22,6 +23,7 @@ export class PatientComponent implements OnInit {
 
   constructor(
     private patientService: PatientService,
+    private router:Router,
     private fb: FormBuilder
   ) {
     this.patientForm = this.fb.group({
@@ -36,10 +38,14 @@ export class PatientComponent implements OnInit {
   }
 
   ngOnInit(): void {
+     if (localStorage.getItem('token') == null) {
+      this.router.navigate(['/login']);
+    }
+
     this.loadPatients();
   }
 
-  loadPatients(): void {
+  loadPatients() {
     this.loading = true;
     this.patientService.getPatients().subscribe({
       next: (patients: Patient[]) => {
