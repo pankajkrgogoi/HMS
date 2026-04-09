@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\HMS\\healthWebAPi\\healthWebAPi.csproj": {}
+    "C:\\HMS\\healthWebAPi\\healthWebAPi.csproj": {}
   },
   "projects": {
-    "c:\\HMS\\healthWebAPi\\healthWebAPi.csproj": {
+    "C:\\HMS\\healthWebAPi\\healthWebAPi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\HMS\\healthWebAPi\\healthWebAPi.csproj",
+        "projectUniqueName": "C:\\HMS\\healthWebAPi\\healthWebAPi.csproj",
         "projectName": "healthWebAPi",
-        "projectPath": "c:\\HMS\\healthWebAPi\\healthWebAPi.csproj",
+        "projectPath": "C:\\HMS\\healthWebAPi\\healthWebAPi.csproj",
         "packagesPath": "C:\\Users\\10854188\\.nuget\\packages\\",
-        "outputPath": "c:\\HMS\\healthWebAPi\\obj\\",
+        "outputPath": "C:\\HMS\\healthWebAPi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\10854188\\AppData\\Roaming\\NuGet\\NuGet.Config"
